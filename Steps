@@ -1,4 +1,9 @@
+
+git clone HTTP
+
 git init 
+
+git status 
 
 git add .
 
