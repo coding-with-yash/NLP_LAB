@@ -12,3 +12,15 @@ git commit -m "First Commit"
 git push -u origin main 
 
 git pull origin main
+
+
+
+Another User Login
+
+git config  --list
+
+git config --global --unset user.email "aku@gmail.com"
+
+git config --global user.email "dhageyash@gmail.com"
+
+git config --global user.name "Yash Dhage"
