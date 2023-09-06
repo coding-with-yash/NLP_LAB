@@ -7,8 +7,8 @@ Title: Text Pre-Processing Using NLP Operation:
         Perform Tokenization,Lemmatization,Stop Word,Part-of-speech tagging use any sample text.
 '''
 
-import spacy
-nlp = spacy.load("en_core_web_sm")
+import spacy                        # import Spacy library
+nlp = spacy.load("en_core_web_sm")  # Load english Dictionary
 
 # 01 Token
 print("Tokenization")
@@ -24,7 +24,7 @@ for token in about_doc:
 
 
 #  02 Stop Word
-print("Stop Word")
+print("Stop Word Removal ")
 about_doc = nlp(about_text)
 print([token for token in about_doc if not token.is_stop])
 
