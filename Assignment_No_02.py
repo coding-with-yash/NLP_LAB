@@ -58,6 +58,34 @@ for item in g_tfidf[g_bow]:
 
 
 
+#word2vec
+
+from gensim.models.word2vec import Word2Vec
+from multiprocessing import cpu_count
+
+print("\n Word2vec \n")
+
+data = [
+    "this is a sentence",
+    "another example sentence",
+    "word embeddings are useful",
+    "word2vec is a popular model",
+]
+
+# Tokenize the text data (split sentences into words)
+tokenized_data = [sentence.split() for sentence in data]
+
+# Create a Word2Vec model
+w2v_model = Word2Vec(tokenized_data, min_count=0, workers=cpu_count())
+
+# Find the most similar words to 'word'
+similar_words = w2v_model.wv.most_similar('word')
+
+for word, score in similar_words:
+    print(f"{word}: {score}")
+
+
+
 '''
 OUTPUT:
 
@@ -76,6 +104,21 @@ Dictionary :
 [['activities', 0.34], ['and', 0.17], ['for', 0.34], ['is', 0.17], ['outdoor', 0.34], ['perfect', 0.34], ['sunny', 0.34], ['the', 0.17], ['today', 0.34], ['warm', 0.34], ['weather', 0.34]]
 [['and', 0.16], ['is', 0.16], ['the', 0.16], ['approaching', 0.32], ['deadline', 0.32], ['do', 0.32], ['fast', 0.32], ['have', 0.32], ['lot', 0.32], ['of', 0.32], ['to', 0.32], ['work', 0.32]]
 [['books', 0.3], ['enjoy', 0.3], ['especially', 0.3], ['fiction', 0.3], ['free', 0.3], ['in', 0.3], ['my', 0.3], ['novels', 0.3], ['reading', 0.3], ['science', 0.3], ['time', 0.3]]
+
+
+Word2vec
+
+sentence: 0.21617141366004944
+embeddings: 0.044689226895570755
+example: 0.015025208704173565
+useful: 0.0019510718993842602
+is: -0.03284316137433052
+this: -0.04568909481167793
+another: -0.0742427185177803
+are: -0.09326908737421036
+a: -0.09575342386960983
+word2vec: -0.10513807833194733
+
 
 '''
 
