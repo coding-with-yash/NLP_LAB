@@ -3,7 +3,8 @@ Assignment No: 02
 Name: Yash Pramod Dhage
 Roll: 70
 Batch: B4
-Title: Assignment to implemnt Bag of Words TF-ID Using Gensim library.
+Title: Assignment to implement  bag-of-words approach tf-idf on data. Create embedding using
+        Word2Vec using Gensim python library.
 '''
 
 from gensim.utils import simple_preprocess
