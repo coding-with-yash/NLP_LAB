@@ -6,8 +6,6 @@ Batch: B4
 Title: Implement Bi-gram, Tri-gram word sequence and its count in text input data using NLTK library.
 '''
 
-
-
 from nltk import ngrams
 
 from nltk.util import ngrams
